@@ -23,7 +23,7 @@ def take_command():
         # print(r)
         with sr.Microphone() as source:
             print("listening")
-            text = "Hello This is your virtual assistant friday. How can I help you?"
+            text = "Hello This is your virtual assistant alex. How can I help you?"
             print(text)
             engine.say(text)
             engine.runAndWait()
@@ -33,8 +33,8 @@ def take_command():
             command = listener.recognize_google(voice)
             command = command.lower()
 
-            if 'friday' in command:
-                command = command.replace('friday', '')
+            if 'alex' in command:
+                command = command.replace('alex', '')
                 print(command)
                 engine.say(command)
                 engine.runAndWait()
@@ -44,7 +44,7 @@ def take_command():
         pass
     return command
 
-def run_friday(): 
+def run_alex(): 
     command = take_command().lower()
     print(command)
     if 'play' in command:
@@ -63,4 +63,4 @@ def run_friday():
         print(info)
         talk(info)
 
-run_friday()
+run_alex()
